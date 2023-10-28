@@ -22,24 +22,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4.1.1
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v3.13.0
       with:
         java-version: '17.0.5'
         distribution: 'oracle'
         cache: gradle
     - name: Setup
-      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
+      uses: gradle/gradle-build-action@v2.9.0
       with:
-        arguments: setup
+        arguments: setup 
     - name: Iris
-      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25
+      uses: gradle/gradle-build-action@v2.9.0
       with:
         arguments: iris
     - name: Save artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.3
       with:
         name: iris
-        path: build/
+        path: build/Iris-3.0.0-1.19.2-1.20.2.jar
       
