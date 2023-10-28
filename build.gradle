@@ -317,6 +317,13 @@ def registerCustomOutputTask(name, path) {
     }
 }
 
+task setup() {
+    group "iris"
+    NMS_BINDINGS.each {
+        dependsOn(project(":nms:${it.key}").executeBuildTools)
+    }
+}
+
 def registerCustomOutputTaskUnix(name, path) {
     if (System.properties['os.name'].toLowerCase().contains('windows')) {
         return;
