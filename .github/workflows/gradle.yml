@@ -37,4 +37,9 @@ jobs:
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25
       with:
         arguments: iris
+    - name: Save artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: iris
+        path: build/
       
