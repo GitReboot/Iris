@@ -28,7 +28,6 @@ jobs:
       with:
         java-version: '17.0.5'
         distribution: 'oracle'
-        cache: gradle
     - name: Setup
       uses: gradle/gradle-build-action@v2.9.0
       with:
